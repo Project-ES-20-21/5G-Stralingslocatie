@@ -1,0 +1,29 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#(c) SnapEDA 2016 (snapeda.com)
+#This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA) with Design Exception 1.0
+#
+# 434111043826
+#
+DEF 434111043826 S 0 40 Y N 1 L N
+F0 "S" -25 90 50 H V L BNN
+F1 "434111043826" -200 -120 50 H V L BNN
+F2 "434111043826" 0 0 50 H I L BNN
+F3 "" 0 0 50 H I L BNN
+F4 "260g" 0 0 50 H I L BNN "OPERATION-FORCE"
+F5 "https://www.we-online.com/catalog/datasheet/434111043826.pdf" 0 0 50 H I L BNN "DATASHEET-URL"
+F6 "4.3mm" 0 0 50 H I L BNN "H"
+F7 "1800" 0 0 50 H I L BNN "QTY"
+F8 "434111043826" 0 0 50 H I L BNN "PART-NUMBER"
+DRAW
+C -50 0 20 0 0 10 N
+C 50 0 20 0 0 10 N
+P 2 0 0 10 -58 19 53 41 N
+P 2 0 0 10 -100 0 -71 0 N
+P 2 0 0 10 71 0 100 0 N
+X ~ 1 -200 0 100 R 40 40 0 0 P 
+X ~ 2 200 0 100 L 40 40 0 0 P 
+ENDDRAW
+ENDDEF
+#
+# End Library
