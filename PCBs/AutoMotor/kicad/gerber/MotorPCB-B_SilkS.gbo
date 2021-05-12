@@ -1,0 +1,23 @@
+G04 #@! TF.GenerationSoftware,KiCad,Pcbnew,(5.1.9)-1*
+G04 #@! TF.CreationDate,2021-04-08T22:29:13+02:00*
+G04 #@! TF.ProjectId,MotorPCBZonderLevelShifter,4d6f746f-7250-4434-925a-6f6e6465724c,rev?*
+G04 #@! TF.SameCoordinates,Original*
+G04 #@! TF.FileFunction,Legend,Bot*
+G04 #@! TF.FilePolarity,Positive*
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad (PCBNEW (5.1.9)-1) date 2021-04-08 22:29:13*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+%ADD10C,0.300000*%
+G04 APERTURE END LIST*
+D10*
+X137096571Y-99167142D02*
+X138239428Y-99167142D01*
+X137668000Y-99738571D02*
+X137668000Y-98595714D01*
+X143192571Y-99167142D02*
+X144335428Y-99167142D01*
+M02*

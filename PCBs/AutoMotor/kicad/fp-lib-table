@@ -1,0 +1,5 @@
+(fp_lib_table
+  (lib (name degson)(type Legacy)(uri ${KIPRJMOD}/degson.mod)(options "")(descr ""))
+  (lib (name MP1584)(type KiCad)(uri "/Users/lisadevuyst/Documents/KiCad Files/MP1584")(options "")(descr ""))
+  (lib (name BSS138)(type KiCad)(uri "/Users/lisadevuyst/Documents/KiCad Files/BSS138")(options "")(descr ""))
+)

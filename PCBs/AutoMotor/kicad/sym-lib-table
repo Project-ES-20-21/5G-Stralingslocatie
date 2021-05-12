@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name degson)(type Legacy)(uri ${KIPRJMOD}/degson.lib)(options "")(descr ""))
+  (lib (name MP1584)(type Legacy)(uri "/Users/lisadevuyst/Documents/KiCad Files/MP1584/MP1584.lib")(options "")(descr ""))
+)
