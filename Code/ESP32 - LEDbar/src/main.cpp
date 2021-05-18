@@ -30,13 +30,13 @@ int ledPins[] = {13,12,14,27,26,25,33,32};
 / RSSI op 3m = 32
 */
 
-int RSSI_1m = 24;                         // rssi waarde op 1m
-double factor = 1.7;                      // factor bepalen via bv GeoGebra
+int RSSI_1m = 16;                         // rssi waarde op 1m
+double factor = 4;                        // factor bepalen via bv GeoGebra
 
 double RSSI_to_distance(int RSSI) {       // bepaal de afstand tot de stralingslocatie ahv de RSSI-waarde
   double distance = pow(10,(RSSI-RSSI_1m)/(10*factor));
 
-  Serial.print("distance :");
+  Serial.print("distance: ");
   Serial.println(distance);
 
   return (distance);
@@ -45,18 +45,18 @@ double RSSI_to_distance(int RSSI) {       // bepaal de afstand tot de stralingsl
 int distance_to_leds(double distance) {   // bepaal het aantal LEDs dat moet branden ahv de afstand tot de stralingslocatie
 
   int distance2 = (int)(distance * 100);
-  Serial.print("distance groter :");
+  Serial.print("distance groter: ");
   Serial.println(distance2);
 
-  int distance3 = constrain(distance2, 50, 600);
-  Serial.print("distance beperkt :");
+  int distance3 = constrain(distance2, 50, 350);
+  Serial.print("distance beperkt: ");
   Serial.println(distance3);  
 
-  return (8 - map(distance3, 50, 600, 0, 8));
+  return (8 - map(distance3, 50, 350, 0, 8));
 }
 void leds(int leds) {                    // laat gegeven aantal LEDs branden
 
-  Serial.print("ledlevel :");
+  Serial.print("ledlevel: ");
   Serial.println(leds);
 
   for (int thisLed = 0; thisLed < ledCount; thisLed++) {
@@ -131,6 +131,7 @@ void callback(char *topic, byte *message, unsigned int length) {
 
   /*
   / verbinding met broker
+  / RESET: "0"
   / STOP: "1" (er moet ontsmet worden)
   / START: "2" (klaar met ontsmetten)
   / POWEROFF: "3" (batterij moet opgeladen worden)
@@ -147,12 +148,17 @@ void callback(char *topic, byte *message, unsigned int length) {
       Serial.println("LEDbar aan");
       aan = true;
     }
+    else if (messageTemp == "0") {
+      Serial.println("RESET");
+      vijfG = false;
+      aan = true;
+    }
   }
 
-  // verbinding met puzzel morsecode -- er wordt een string "morse_einde" verzonden indien de morsecode puzzel voltooid is
+  // verbinding met puzzel morsecode -- er wordt een string "einde_morse" verzonden indien de morsecode puzzel voltooid is
 
   if (String(topic) == "esp32/morse/output") {
-    if (messageTemp == "morse_einde") {
+    if (messageTemp == "einde_morse") {
       Serial.println("morsecode voltooid - LEDbar aan");
       vijfG = true;
     }
